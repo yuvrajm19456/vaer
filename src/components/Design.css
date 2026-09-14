@@ -1,0 +1,232 @@
+.design-section {
+  position: relative;
+  height: 320vh;
+
+  background: #080a0b;
+  color: #f4f4f2;
+}
+
+.design-stage {
+  position: sticky;
+  top: 0;
+
+  width: 100vw;
+  height: 100svh;
+  min-height: 650px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.design-label {
+  position: absolute;
+
+  top: 9vh;
+  left: 5vw;
+
+  z-index: 10;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 9px;
+  font-weight: 400;
+
+  letter-spacing: 0.25em;
+
+  opacity: 0.45;
+}
+
+
+/* =========================
+   CAR VISUALS
+========================= */
+
+.design-visual {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.design-image {
+  position: absolute;
+
+  width: 88%;
+  max-width: 1500px;
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 0;
+
+  transform: scale(1.06);
+
+  z-index: 2;
+
+  will-change: transform, opacity;
+
+  /*
+    Keep the original image appearance.
+    This prevents the images from visually
+    blending into each other.
+  */
+  mix-blend-mode: normal;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.design-copy {
+  position: absolute;
+
+  left: 7vw;
+  bottom: 13vh;
+
+  z-index: 5;
+
+  max-width: 700px;
+
+  pointer-events: none;
+}
+
+.design-copy h2 {
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(48px, 7vw, 105px);
+
+  font-weight: 300;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.065em;
+
+  will-change: transform, opacity;
+}
+
+.design-copy p {
+  max-width: 330px;
+
+  margin: 28px 0 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.03em;
+
+  opacity: 0.55;
+
+  will-change: transform, opacity;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.design-progress {
+  position: absolute;
+
+  right: 5vw;
+  bottom: 7vh;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 8px;
+  font-weight: 400;
+
+  letter-spacing: 0.15em;
+
+  opacity: 0.45;
+}
+
+.design-progress div,
+.progress-line {
+  width: 80px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .design-section {
+    height: 280vh;
+  }
+
+  .design-stage {
+    min-height: 600px;
+  }
+
+  .design-image {
+    width: 125%;
+    max-width: none;
+  }
+
+  .design-copy {
+    left: 7vw;
+    bottom: 12vh;
+  }
+
+  .design-copy h2 {
+    font-size: 13vw;
+    line-height: 0.9;
+  }
+
+  .design-copy p {
+    max-width: 280px;
+    margin-top: 22px;
+    font-size: 11px;
+  }
+
+  .design-label {
+    left: 7vw;
+    top: 8vh;
+  }
+
+  .design-progress {
+    right: 7vw;
+    bottom: 6vh;
+  }
+
+  .design-progress div,
+  .progress-line {
+    width: 55px;
+  }
+}

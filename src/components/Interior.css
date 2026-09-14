@@ -1,0 +1,165 @@
+.interior-section {
+  position: relative;
+  height: 260vh;
+  background: #080a0b;
+  color: #f4f4f2;
+}
+
+.interior-stage {
+  position: sticky;
+  top: 0;
+
+  width: 100vw;
+  height: 100svh;
+  min-height: 650px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LABEL */
+
+.interior-label {
+  position: absolute;
+  top: 9vh;
+  left: 5vw;
+
+  z-index: 10;
+
+  font-size: 9px;
+  letter-spacing: 0.25em;
+
+  opacity: 0.45;
+}
+
+/* VISUAL */
+
+.interior-visual {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.interior-image {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  will-change: transform, opacity;
+}
+
+/* FIRST IMAGE */
+
+.interior-wide {
+  transform: scale(1.08);
+}
+
+/* SECOND IMAGE */
+
+.interior-detail {
+  transform: scale(1.08);
+}
+
+/* CINEMATIC OVERLAY */
+
+.interior-visual::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25),
+      transparent 40%,
+      rgba(0, 0, 0, 0.72)
+    );
+
+  pointer-events: none;
+}
+
+/* COPY */
+
+.interior-copy {
+  position: absolute;
+
+  left: 7vw;
+  bottom: 12vh;
+
+  z-index: 5;
+
+  max-width: 600px;
+
+  pointer-events: none;
+}
+
+.interior-copy h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 6.5vw, 100px);
+
+  font-weight: 300;
+
+  line-height: 0.9;
+
+  letter-spacing: -0.065em;
+
+  will-change: transform, opacity;
+}
+
+.interior-copy p {
+  max-width: 360px;
+
+  margin: 28px 0 0;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.03em;
+
+  opacity: 0.65;
+
+  will-change: transform, opacity;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .interior-section {
+    height: 240vh;
+  }
+
+  .interior-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .interior-copy {
+    left: 7vw;
+    bottom: 11vh;
+  }
+
+  .interior-copy h2 {
+    font-size: 13vw;
+  }
+
+  .interior-label {
+    left: 7vw;
+  }
+}

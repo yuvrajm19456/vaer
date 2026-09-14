@@ -1,0 +1,307 @@
+.hero {
+  position: relative;
+  height: 220vh;
+  background: #080a0b;
+  color: #fff;
+}
+
+.hero-stage {
+  position: sticky;
+  top: 0;
+
+  width: 100vw;
+  height: 100svh;
+
+  min-height: 600px;
+
+  overflow: hidden;
+
+  background: #080a0b;
+}
+
+/* ---------------- VIDEO ---------------- */
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.08);
+
+  will-change: transform, opacity;
+}
+
+/* ---------------- OVERLAY ---------------- */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.05) 45%,
+      rgba(0, 0, 0, 0.75)
+    );
+}
+
+/* ---------------- CAR ---------------- */
+
+
+
+.hero-car img {
+  width: 82%;
+  max-width: 1450px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+
+  transform: translate3d(
+    var(--mouse-x, 0px),
+    var(--mouse-y, 0px),
+    0
+  );
+
+  will-change: transform, opacity;
+  mix-blend-mode: screen;
+  filter: contrast(1.03);
+}
+
+/* ---------------- CONTENT ---------------- */
+
+.hero-content {
+  position: absolute;
+
+  left: 6vw;
+  bottom: 11vh;
+
+  z-index: 3;
+
+  max-width: 500px;
+
+  will-change: transform, opacity;
+}
+
+.hero-eyebrow {
+  margin: 0 0 18px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  opacity: 0.65;
+}
+
+.hero-content h1 {
+  margin: 0;
+
+  font-size: clamp(64px, 8vw, 120px);
+
+  font-weight: 400;
+  line-height: 0.85;
+
+  letter-spacing: -0.065em;
+}
+
+.hero-content h1 span {
+  display: inline-block;
+
+  margin-left: 18px;
+
+  font-size: 0.22em;
+
+  vertical-align: middle;
+
+  letter-spacing: 0;
+
+  opacity: 0.55;
+}
+
+.hero-tagline {
+  margin: 28px 0 0;
+
+  font-size: 14px;
+
+  letter-spacing: 0.08em;
+
+  opacity: 0.75;
+}
+/* ---------------- SCROLL ---------------- */
+
+.hero-scroll {
+  position: absolute;
+
+  right: 5vw;
+  bottom: 6vh;
+
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  font-size: 9px;
+  letter-spacing: 0.2em;
+
+  opacity: 0.65;
+}
+
+.scroll-line {
+  width: 70px;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 768px) {
+  .hero {
+    height: 200vh;
+  }
+
+  .hero-content {
+    left: 7vw;
+    bottom: 16vh;
+  }
+
+  .hero-content h1 {
+    font-size: 30vw;
+  }
+
+  .hero-car img {
+    width: 120%;
+    max-width: none;
+  }
+
+  .hero-scroll {
+    right: auto;
+    left: 7vw;
+  }
+}
+
+.sound-control {
+  position: absolute;
+  top: 58px;
+  right: 5vw;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-family: inherit;
+
+  font-size: 9px;
+  letter-spacing: 0.18em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.sound-control:hover {
+  color: #fff;
+}
+
+.sound-icon {
+  font-size: 8px;
+}
+
+@media (max-width: 768px) {
+  .sound-control {
+    top: 24px;
+    right: 7vw;
+  }
+}
+
+/* NAVIGATION */
+
+.hero-nav {
+  left: 7vw;
+  right: 7vw;
+  top: 24px;
+}
+
+.nav-logo,
+.nav-links a {
+  pointer-events: auto;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-logo {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.06em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  transition: width 0.35s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-links a.active {
+  opacity: 1;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+.nav-links {
+  gap: 12px;
+}
+
+.nav-links a {
+  font-size: 6px;
+  letter-spacing: 0.1em;
+}

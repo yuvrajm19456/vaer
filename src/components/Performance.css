@@ -1,0 +1,147 @@
+.performance-section {
+  position: relative;
+  height: 320vh;
+  background: #080a0b;
+  color: #f4f4f2;
+}
+
+.performance-stage {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100svh;
+  min-height: 650px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LABEL */
+
+.performance-label {
+  position: absolute;
+  top: 9vh;
+  left: 5vw;
+  z-index: 10;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  opacity: 0.45;
+}
+
+/* MAIN NUMBER */
+
+.performance-main {
+  text-align: center;
+}
+
+.performance-number {
+  font-size: clamp(120px, 21vw, 310px);
+  font-weight: 300;
+  line-height: 0.78;
+  letter-spacing: -0.09em;
+  will-change: transform, opacity;
+}
+
+.performance-unit {
+  margin-top: 34px;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  opacity: 0.65;
+  will-change: transform, opacity;
+}
+
+.performance-main p {
+  margin: 24px auto 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  opacity: 0.45;
+  will-change: transform, opacity;
+}
+
+/* DRIVING MODES */
+
+.performance-modes {
+  position: absolute;
+  left: 5vw;
+  bottom: 8vh;
+  display: flex;
+  gap: 42px;
+  will-change: transform, opacity;
+}
+
+.mode {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  opacity: 0.3;
+}
+
+.mode.active {
+  opacity: 1;
+}
+
+.mode span {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.mode strong {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+
+.mode small {
+  font-size: 9px;
+  opacity: 0.55;
+}
+
+/* SPEC COLUMN */
+
+.performance-specs {
+  position: absolute;
+  right: 5vw;
+  bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 9px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  opacity: 0.4;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .performance-section {
+    height: 280vh;
+  }
+
+  .performance-label {
+    left: 7vw;
+  }
+
+  .performance-number {
+    font-size: 32vw;
+  }
+
+  .performance-modes {
+    left: 7vw;
+    right: 7vw;
+    gap: 22px;
+  }
+
+  .performance-specs {
+    display: none;
+  }
+
+  .mode strong {
+    font-size: 9px;
+  }
+
+  .mode small {
+    font-size: 8px;
+  }
+}
