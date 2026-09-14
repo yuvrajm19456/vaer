@@ -1,0 +1,41 @@
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #080a0b;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+::selection {
+  background: #f4f4f2;
+  color: #080a0b;
+}
+body {
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
